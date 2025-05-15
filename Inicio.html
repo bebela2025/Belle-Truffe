@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belle Truffe</title>
+
+  <!-- Link do Swiper (estilo do carrossel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Link pro seu CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Estilo para animação de linha nos links -->
+  <style>
+    .menu-link,
+    footer a {
+      position: relative;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .menu-link::after,
+    footer a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-link:hover::after,
+    footer a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-link:focus::after,
+    footer a:focus::after {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+  <!-- BARRA DECORATIVA -->
+  <div class="decorative-bar"></div>
+
+  <!-- MENU COM ANIMAÇÃO -->
+  <nav class="navbar">
+  <div class="menu-logo">
+    <a href="Inicio.html"><img src="Belle Truffe.png" alt="Logo Belle Truffe"></a>
+  </div>
+  <ul class="menu">
+    <li><a href="Inicio.html" class="menu-link active">Inicio</a></li>
+    <li><a href="Sobre Nós.html" class="menu-link">Sobre Nós</a></li>
+    <li><a href="Cardapio.html" class="menu-link">Cardápio</a></li>
+    <li><a href="Promocoes.html" class="menu-link">Promoções</a></li>
+    <li><a href="Cardapio.html" class="menu-link">Contato</a></li>
+  </ul>
+</nav>
+
+  <!-- BANNER COM SWIPER -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="BANNER PROMOÇÃO DIA DAS MÃES.jpg" alt="Banner 1">
+    </div>
+    <div class="swiper-slide">
+      <img src="BANNER PROMOÇÃO DIA DOS NAMORADOS.jpg" alt="Banner 2">
+    </div>
+    <div class="swiper-slide">
+      <img src="BANNER BELLE TRUFFE.jpg" alt="Banner 3">
+    </div>
+    <div class="swiper-slide">
+      <img src="BANNER TRUFA DE SORVETE.jpg" alt="Banner 4">
+    </div>
+  </div>
+  
+  <!-- Swiper Navigation -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Swiper Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Código para ativar o banner -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        bulletClass: 'swiper-pagination-bullet',
+        bulletActiveClass: 'swiper-pagination-bullet-active',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+    });
+  </script>
+
+  <!-- Destaques -->
+  <section class="destaques">
+    <h2>Destaques</h2>
+    <div class="destaques-container">
+      <div class="destaque-card">
+        <img src="Trufa Pistache.jpg" alt="Trufa 1">
+        <h3>Trufa de Pistache</h3>
+        <p>Sofisticada, com o sabor leve do pistache.</p>
+      </div>
+      <div class="destaque-card">
+        <img src="Trufa Branca Oreo.jpg" alt="Trufa 2">
+        <h3>Trufa de Chocolate Branco de Oreo</h3>
+        <p>Crocante e cremosa, com pedacinhos do biscoito.</p>
+      </div>
+      <div class="destaque-card">
+        <img src="Trufas Sorvetes Produtos.jpg" alt="Trufa 3">
+        <h3>Trufa de Sorvete de Limão Cremoso</h3>
+        <p>Cremosa, cítrica e ideal para quem gosta de leveza.</p>
+      </div>
+    </div>
+  </section>
+<section class="avaliacoes">
+  <h2>Clientes da Semana</h2>
+
+  <div class="avaliacoes-container">
+    <div class="avaliacao">
+      <p class="estrelas">★★★★★</p>
+      <p>“As trufas são maravilhosas, delicadas e muito bem embaladas. Perfeitas para presentes!”</p>
+      <span>– Camila R.</span>
+    </div>
+    <div class="avaliacao">
+      <p class="estrelas">★★★★★</p>
+      <p>“A experiência foi incrível! Atendimento impecável e sabor inigualável.”</p>
+      <span>– João M.</span>
+    </div>
+    <div class="avaliacao">
+      <p class="estrelas">★★★★★</p>
+      <p>“Comprei para um evento e todos elogiaram. Super recomendo!”</p>
+      <span>– Fernanda L.</span>
+    </div>
+  </div>
+
+  <!-- Botão para abrir formulário -->
+  <button id="mostrar-formulario">Fazer Avaliação</button>
+
+  <!-- Formulário de Avaliação -->
+  <div id="formulario-avaliacao">
+    <form id="form-avaliacao">
+      <div class="campo-avaliacao">
+        <label for="nome">Seu Nome:</label>
+        <input type="text" id="nome" name="nome" required placeholder="Seu nome" />
+      </div>
+      <div class="campo-avaliacao">
+        <label for="comentario">Comentário:</label>
+        <textarea id="comentario" name="comentario" rows="4" required placeholder="Deixe sua avaliação aqui"></textarea>
+      </div>
+      <div class="campo-avaliacao">
+        <label for="estrela">Sua Nota:</label>
+        <select id="estrela" name="estrela" required>
+          <option value="">Escolha uma nota</option>
+          <option value="1">★</option>
+          <option value="2">★★</option>
+          <option value="3">★★★</option>
+          <option value="4">★★★★</option>
+          <option value="5">★★★★★</option>
+        </select>
+      </div>
+      <div class="campo-avaliacao">
+        <button type="submit" class="botao-avaliacao">Enviar Avaliação</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Mensagem de sucesso -->
+  <div id="mensagem-sucesso">
+    <p>Avaliação enviada com sucesso!</p>
+  </div>
+</section>
+
+<script>
+  // Mostrar formulário ao clicar no botão
+  document.getElementById('mostrar-formulario').addEventListener('click', () => {
+    document.getElementById('formulario-avaliacao').style.display = 'block';
+    window.scrollTo({
+      top: document.getElementById('formulario-avaliacao').offsetTop - 100,
+      behavior: 'smooth'
+    });
+  });
+
+  // Validar e processar envio
+  document.getElementById('form-avaliacao').addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede envio padrão
+
+    const nome = document.getElementById('nome').value.trim();
+    const comentario = document.getElementById('comentario').value.trim();
+    const estrela = document.getElementById('estrela').value;
+
+    if (!nome || !comentario || !estrela) {
+      alert("Por favor, preencha todos os campos corretamente.");
+      return;
+    }
+
+    // Exibe mensagem de sucesso
+    document.getElementById('mensagem-sucesso').style.display = 'block';
+
+    // Limpa o formulário
+    this.reset();
+
+    // Oculta o formulário após envio
+    document.getElementById('formulario-avaliacao').style.display = 'none';
+  });
+</script>
+
+
+
+  <!-- Sessão Como Comprar -->
+  <section class="como-comprar">
+    <h2>Como Comprar Nossas Trufas</h2>
+    <div class="etapas-compra">
+      <div class="etapa">
+        <img src="passo1.png" alt="Escolha seu doce">
+        <h3>1. Escolha</h3>
+        <p>Navegue pelo nosso cardápio e selecione suas trufas preferidas.</p>
+      </div>
+      <div class="etapa">
+        <img src="passo2.png" alt="Combine horário">
+        <h3>2. Combine</h3>
+        <p>Informe o horário e ponto de retirada ou evento.</p>
+      </div>
+      <div class="etapa">
+        <img src="passo3.png" alt="Retire ou receba">
+        <h3>3. Retire</h3>
+        <p>Receba no evento ou retire em um de nossos pontos de coleta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+<footer class="footer">
+  <div class="rodape-container">
+    
+    <!-- Coluna central: menu + contato/redes com linha no meio -->
+    <div class="rodape-centro">
+      <div class="coluna-esquerda">
+        <nav>
+          <ul>
+            <li><a href="Inicio.html" class="active">Início</a></li>
+            <li><a href="Sobre Nós.html">Sobre Nós</a></li>
+            <li><a href="Cardapio.html">Cardápio</a></li>
+            <li><a href="Promocoes.html">Promoções</a></li>
+            <li><a href="Contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="linha-divisoria"></div>
+
+      <div class="coluna-direita">
+        <p>Email: contato@belletruffe.com</p>
+        <p>WhatsApp: (00) 00000-0000</p>
+        <div class="footer-redes">
+          <a href="https://instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo à direita -->
+    <div class="rodape-logo">
+     <a href="Inicio.html" class="logo-rodape-link">
+  <img src="Belle Truffe.png" alt="Logo Belle Truffe" class="logo-rodape">
+</a>
+    </div>
+  </div>
+
+<!-- Barra decorativa final com direitos -->
+<div class="decorative-bar-rodape">
+  <p>© 2025 Belle Truffe. Todos os direitos reservados.</p>
+</div>
+  
+</body>
+</html>
+
